@@ -10,9 +10,13 @@ def get_reviews(app_name, app_link):
 
     save_path = r"C:\Users\karah\Desktop\cs48000-group7"
 
-    completeName = os.path.join(save_path, app_name+".txt")   
+    completeName = os.path.join(save_path, app_name+".txt") 
+    
+      
    
     f = open(completeName, "w", encoding="utf-8")
+
+    
 
     result, continuation_token = reviews(
     app_link,
@@ -30,6 +34,10 @@ def get_reviews(app_name, app_link):
         app_link,
         continuation_token=continuation_token # defaults to None(load from the beginning)
     )
+    if len(result) == 0:
+        f.close()
+        os.remove(completeName)
+        pass
 
     for rev in result:
        
