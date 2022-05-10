@@ -42,8 +42,8 @@ def get_reviews(app_name, app_link):
             lang = detect(content)
         except:
             lang = "error"
-            print("This row throws and error")
-            
+            print("This row throws an error")
+
         if(len(user) == 0 or len(content) == 0 or lang != 'en'):
             continue
        
