@@ -1,12 +1,14 @@
 from asyncio.windows_events import NULL
-from google_play_scraper import Sort, reviews
-from cleantext import clean
+from google_play_scraper import Sort, reviews, app
 import os.path
+from langdetect import detect
+from cleantext import clean
+
 
 
 def get_reviews(app_name, app_link):
 
-    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
+    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
 
     completeName = os.path.join(save_path, app_name+".txt")   
    
@@ -33,6 +35,17 @@ def get_reviews(app_name, app_link):
        
         user = clean(rev["userName"], no_emoji=True)
         content = clean(rev["content"], no_emoji=True)
+
+        lang = "try"
+
+        try:
+            lang = detect(content)
+        except:
+            lang = "error"
+            print("This row throws and error")
+            
+        if(len(user) == 0 or len(content) == 0 or lang != 'en'):
+            continue
        
         f.write(user + " : "+ content + "\n")
 
@@ -40,7 +53,7 @@ def get_reviews(app_name, app_link):
     f.close()
 
 def get_reviews_from_all(file_name):
-    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
+    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
 
     completeName = os.path.join(save_path, file_name+".txt")   
    
