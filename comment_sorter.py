@@ -12,7 +12,7 @@ def sort_comments(game_name):
     completeName1 = os.path.join(save_path, app_name+".txt")
     completeName3 = os.path.join(save_path, game_name+".txt")
     
-    f1 = open(completeName1, "a", encoding="utf-8")
+    
 
     f3 = open(completeName3, "r", encoding="utf-8")       
     lines = f3.readlines()
@@ -26,9 +26,13 @@ def sort_comments(game_name):
         print(inp)
     
         if inp == "1" :
+            f1 = open(completeName1, "a", encoding="utf-8")
             f1.write(removedCom + ",1\n")
+            f1.close()
         if inp == "2" :
+            f1 = open(completeName1, "a", encoding="utf-8")
             f1.write(removedCom + ",0\n")
+            f1.close()
         if inp == "3" :
             continue
         if inp == "0" :
@@ -36,7 +40,7 @@ def sort_comments(game_name):
 
 
     f3.close()
-    f1.close()
+    
 
     
 
