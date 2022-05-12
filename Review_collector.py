@@ -97,7 +97,7 @@ def get_reviews_rec(app_link, num):
     lang='en', # defaults to 'en'
     country='TR', # defaults to 'us'
     sort=Sort.MOST_RELEVANT, # defaults to Sort.MOST_RELEVANT
-    filter_score_with=5 # defaults to None(means all score)
+    
     )
     
     

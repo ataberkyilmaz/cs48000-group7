@@ -4,7 +4,7 @@ from asyncio.windows_events import NULL
 def sort_comments(game_name):
 
 
-    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
+    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
    
     app_name = "sorted_comments"
     
