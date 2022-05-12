@@ -49,5 +49,5 @@ def sort_comments(game_name):
 
 if __name__ == '__main__':
     
-    sort_comments("Gumslinger")
+    sort_comments("Formula Car Stunt - Car Games")
     print("-------------DONE------------------------")
