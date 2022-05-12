@@ -151,6 +151,6 @@ def get_reviews_from_all(file_name):
 
 
 if __name__ == '__main__':
-    #get_reviews_from_all("google_play_apps")
+    
     get_reviews_rec("com.noodlecake.altosadventure", 10)
     print("-------------DONE------------------------")
