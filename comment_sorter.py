@@ -19,18 +19,18 @@ def sort_comments(game_name):
     lines = f3.readlines()
     
     for line in lines:
-        lst = line.split("-")
+        lst = line.split(":")
         
  
         print(lst[1])
-        inp = input("Enter 1 for positive, Enter 0 for negative, Enter 2 to end:")
+        inp = input("Enter 1 for positive, Enter 2 for negative, Enter 0 to end:")
         print(inp)
     
-        if inp == "0" :
-            f1.write(lst[1])
         if inp == "1" :
-            f2.write(lst[1])
+            f1.write(lst[1])
         if inp == "2" :
+            f2.write(lst[1])
+        if inp == "0" :
             break
 
 
