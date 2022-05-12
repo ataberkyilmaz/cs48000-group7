@@ -4,7 +4,7 @@ from asyncio.windows_events import NULL
 def sort_comments(game_name):
 
 
-    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
+    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
    
     app_name1 = "positive_comments"
     app_name2 = "negative_comments"
@@ -16,7 +16,8 @@ def sort_comments(game_name):
     f1 = open(completeName1, "a", encoding="utf-8")
     f2 = open(completeName2, "a", encoding="utf-8")
     f3 = open(completeName3, "r", encoding="utf-8")       
-    lines = f3.readlines
+    lines = f3.readlines()
+    
     for line in lines:
         
  
