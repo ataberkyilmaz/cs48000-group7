@@ -33,7 +33,7 @@ def predictData(comment_list):
     X_train = vectorizer.transform(reviews_train)
     X_test = vectorizer.transform(reviews_test)
 
-    classifier = LogisticRegression()
+    classifier = LogisticRegression(max_iter=10000)
     classifier.fit(X_train, y_train)
 
     accuracy = classifier.score(X_test, y_test)
