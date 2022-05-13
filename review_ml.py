@@ -68,7 +68,17 @@ if __name__ == '__main__':
     the robot keeps falling because of the smallest pushes from the movable parts of the puzzles. gets kinda annoying when you're so close to finish and the little idiot can't even stand by itself.,0
     almost fun. the reliance on weird motions makes it unruly to play on a phone touch screen. too much tricky maneuvering not enough puzzle.,0
     too much ads.. ads actively interupts gameplay  pauses game to show ads. ads in between levels are fine. but pausing an active level just to show ads is not acceptable.,0
-    to be honest this game is really bland  the physics are wonky and the levels are super easy  it's practically pay to win since you can't use hints since the game just expects you to know everything about the mechanics of the game  really sloppy  i don't reccomend.,0"""
+    to be honest this game is really bland  the physics are wonky and the levels are super easy  it's practically pay to win since you can't use hints since the game just expects you to know everything about the mechanics of the game  really sloppy  i don't reccomend.,0
+
+
+    good game on this trashy app store,1
+    nice and very entertaining game...,1
+    good game. give it a try and see for your self.,1
+    fix the game wen ay enter it is black all,0
+        
+    
+    
+    """
 
 
 
@@ -80,7 +90,11 @@ if __name__ == '__main__':
       "really having fun with this. great art style. fun  challenging puzzles. but lowkey and casual. i love it!",
       "loved this game alot  completed a couple of times but still never got bored. eagerly waiting for next version...yeah i know we can download different levels from browser but still just waiting for more. do try this game guys you'll love it for sure.",
       "the game's amazing....i have tried many games over time...and its one of the very good games' category that i would put this game in. it's not very addictive so won't kill ur precious time and it's fun...so overall....good games for everyone looking for a rest time game",
-      "i love it. its tricks the mind  but the music and beautiful simple graphic dilutes the pressure and make it such a soothing and refreshing game."]
+      "i love it. its tricks the mind  but the music and beautiful simple graphic dilutes the pressure and make it such a soothing and refreshing game.",
+      "good game on this trashy app store",
+      "nice and very entertaining game",
+      "good game. give it a try and see for your self.",
+      "fix the game wen ay enter it is black all"]
 
 
     print("The result is :" , predictData(new_reviews))
