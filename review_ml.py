@@ -74,7 +74,7 @@ if __name__ == '__main__':
     good game on this trashy app store,1
     nice and very entertaining game...,1
     good game. give it a try and see for your self.,1
-    fix the game wen ay enter it is black all,0
+    fix da game wen ay enter it is black all,0
         
     
     
@@ -94,7 +94,7 @@ if __name__ == '__main__':
       "good game on this trashy app store",
       "nice and very entertaining game",
       "good game. give it a try and see for your self.",
-      "fix the game wen ay enter it is black all"]
+      "fix da game wen ay enter it is black all"]
 
 
     print("The result is :" , predictData(new_reviews))
