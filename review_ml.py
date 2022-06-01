@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 
 
 def predictData(comment_list):
-    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
+    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
 
     completeName = os.path.join(save_path, "sorted_comments.txt") 
     completeNameCsv = os.path.join(save_path, "sorted_comments.csv") 

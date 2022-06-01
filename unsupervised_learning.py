@@ -1,3 +1,4 @@
+from unittest import skip
 import pandas as pd
 import os.path
 import csv
@@ -14,9 +15,13 @@ def getList(file_name, save_path):
 
     with open(completeName, 'r') as in_file:
         stripped = (line.strip() for line in in_file)
-        lines = (line.split(",") for line in stripped if line)
-        for line in lines:
-            comments.append(line[0])
+        # lines = (line.split(":") for line in stripped if line)
+        for line in stripped:
+            line = line.replace(",", " ")
+            line = line.replace("\n", "")
+            thisLine = line.split(" : ")
+            if len(thisLine) == 2:
+                comments.append(thisLine[1])
 
     return comments
 
@@ -38,9 +43,9 @@ def predictNewData(comment_list, save_path, completeName):
     print('Data Dimensionality: ' , df.shape)
     print('Data Summary: ' , df.info)
 
-    reviews = df['review'].values
-    labels = df['sentiment'].values
-    reviews_train, reviews_test, y_train, y_test = train_test_split(reviews, labels, test_size=0.0000000001, random_state=1000)
+    reviews = df['review'].values.astype('U')
+    labels = df['sentiment'].values.astype('U')
+    reviews_train, reviews_test, y_train, y_test = train_test_split(reviews, labels, test_size=0.0000001, random_state=1000)
 
     vectorizer = CountVectorizer()
     vectorizer.fit(reviews_train)
@@ -64,7 +69,7 @@ def predictNewData(comment_list, save_path, completeName):
         
 def predictAdd(file_name):
 
-    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
+    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
 
     completeName = os.path.join(save_path, "all_sorted_comments.txt") 
 
@@ -84,7 +89,7 @@ def predictAdd(file_name):
 
 if __name__ == '__main__':
 
-    predictAdd("Alto's Adventure.txt")
+    predictAdd("Unholy Adventure Mystery.txt")
    
 
 

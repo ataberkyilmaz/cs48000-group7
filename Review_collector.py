@@ -10,7 +10,7 @@ used_links = [];
 
 def get_reviews(app_name, app_link):
 
-    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
+    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
 
     completeName = os.path.join(save_path, app_name+".txt") 
     
@@ -80,7 +80,7 @@ def get_reviews_rec(app_link, num):
             break
     
     
-    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
+    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
 
     completeName = os.path.join(save_path, app_info["title"]+".txt") 
     
@@ -136,7 +136,7 @@ def get_reviews_rec(app_link, num):
         get_reviews_rec(similar, num -1)
 
 def get_reviews_from_all(file_name):
-    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
+    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
 
     completeName = os.path.join(save_path, file_name+".txt")   
    
