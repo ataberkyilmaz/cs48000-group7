@@ -152,5 +152,5 @@ def get_reviews_from_all(file_name):
 
 if __name__ == '__main__':
     
-    get_reviews_rec("com.noodlecake.altosadventure", 10)
+    get_reviews_rec("com.nianticlabs.pokemongo", 12)
     print("-------------DONE------------------------")

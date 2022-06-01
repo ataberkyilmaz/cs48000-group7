@@ -5,8 +5,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 
-def getList(file_name, save_path, completeName):
+def getList(file_name, save_path):
 
+    completeName = os.path.join(save_path, file_name) 
     comments = []
 
 
@@ -39,7 +40,7 @@ def predictNewData(comment_list, save_path, completeName):
 
     reviews = df['review'].values
     labels = df['sentiment'].values
-    reviews_train, reviews_test, y_train, y_test = train_test_split(reviews, labels, test_size=0.0000001, random_state=1000)
+    reviews_train, reviews_test, y_train, y_test = train_test_split(reviews, labels, test_size=0.0000000001, random_state=1000)
 
     vectorizer = CountVectorizer()
     vectorizer.fit(reviews_train)
@@ -47,7 +48,7 @@ def predictNewData(comment_list, save_path, completeName):
     X_train = vectorizer.transform(reviews_train)
     X_test = vectorizer.transform(reviews_test)
 
-    classifier = LogisticRegression(max_iter=10000)
+    classifier = LogisticRegression(max_iter=1000000)
     classifier.fit(X_train, y_train)
 
     accuracy = classifier.score(X_test, y_test)
@@ -58,7 +59,7 @@ def predictNewData(comment_list, save_path, completeName):
     
     predictions = classifier.predict(X_new)
 
-    print(predictions)
+    print(len(predictions))
     return predictions
         
 def predictAdd(file_name):
@@ -67,7 +68,9 @@ def predictAdd(file_name):
 
     completeName = os.path.join(save_path, "all_sorted_comments.txt") 
 
-    new_reviews = getList(file_name, save_path, completeName)
+    new_reviews = getList(file_name, save_path)
+
+    print("predictions:" , len(new_reviews))
 
     predictions = predictNewData(new_reviews,save_path, completeName)
 
@@ -81,7 +84,7 @@ def predictAdd(file_name):
 
 if __name__ == '__main__':
 
-    predictAdd("#Cats in Time Relaxing Puzzle.txt")
+    predictAdd("Alto's Adventure.txt")
    
 
 
