@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 import numpy as np
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import f1_score, precision_recall_fscore_support
 
 def getList(file_name, save_path):
 
@@ -57,41 +57,49 @@ def predictNewData(comment_list, save_path, completeName):
 
     classifier = LogisticRegression(max_iter=1000000)
     classifier.fit(X_train, y_train)
-
-    accuracy = classifier.score(X_test, y_test)
-    print("Accuracy:", accuracy)
+    
 
     
     X_new = vectorizer.transform(comment_list)
     
     predictions = classifier.predict(X_new)
 
-    print(len(predictions))
+    print("\n The amount of predicted reviews:",len(predictions))
     return predictions
         
-def predictAdd(file_name):
+def evaluate(file_name):
 
-    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
+    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
 
     completeName = os.path.join(save_path, "all_sorted_comments.txt") 
+    completeName1 = os.path.join(save_path, "golden_set.txt") 
 
     new_reviews = getList(file_name, save_path)
 
-    print("predictions:" , len(new_reviews))
+    print("\n\nPredictions with All Sorted Reviews:\n\n")
+    predictions1 = predictNewData(new_reviews,save_path, completeName)
 
-    predictions = predictNewData(new_reviews,save_path, completeName)
+    print("\n\nPredictions with the Golden Set:\n\n")
+    predictions2 = predictNewData(new_reviews,save_path, completeName1)
 
-    for i in range(len(new_reviews)):
-            f1 = open(completeName, "a", encoding="utf-8")
-            f1.write(new_reviews[i] + "," +str(predictions[i]) +"\n")
-            f1.close()
+    rate = 0.0
+
+    for i in range(len(predictions1)):
+        if predictions1[i] == predictions2[i]:
+            rate += 1
+
+    print("\nThe correctness taking the golden set as correct is:" , str(rate/len(predictions1)))
+
+    print("\nThe F1 Score taking the golden set as correct is:" , str(f1_score(predictions2, predictions1, labels=["0","1"], pos_label= "1")))
+
+
 
 
 
 
 if __name__ == '__main__':
 
-    predictAdd("Unholy Adventure Mystery.txt")
+    evaluate("Redbros.txt")
    
 
 
