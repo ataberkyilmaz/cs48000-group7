@@ -64,7 +64,7 @@ def predictNewData(comment_list, save_path, completeName):
     
     predictions = classifier.predict(X_new)
 
-    print("\n The amount of predicted reviews:",len(predictions))
+    
     return predictions
         
 def evaluate(file_name):
@@ -88,6 +88,7 @@ def evaluate(file_name):
         if predictions1[i] == predictions2[i]:
             rate += 1
 
+    print("\n The amount of predicted reviews:",len(predictions1))
     print("\nThe correctness taking the golden set as correct is:" , str(rate/len(predictions1)))
 
     print("\nThe F1 Score taking the golden set as correct is:" , str(f1_score(predictions2, predictions1, labels=["0","1"], pos_label= "1")))
