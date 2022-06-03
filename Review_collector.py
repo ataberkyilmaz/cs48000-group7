@@ -10,7 +10,7 @@ used_links = [];
 
 def get_reviews(app_name, app_link):
 
-    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
+    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
 
     completeName = os.path.join(save_path, app_name+".txt") 
     
@@ -68,7 +68,7 @@ def get_reviews_rec(app_link, num):
     )
     print(app_info["title"])
     used_links.append(app_link)
-
+    print(app_info.keys())
     similarlst = app_info["similarApps"]
 
     similar = ""
@@ -152,5 +152,5 @@ def get_reviews_from_all(file_name):
 
 if __name__ == '__main__':
     
-    get_reviews_rec("com.nianticlabs.pokemongo", 12)
+    get_reviews("Candy Crush Soda","com.king.candycrushsodasaga")
     print("-------------DONE------------------------")

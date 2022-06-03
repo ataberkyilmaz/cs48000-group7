@@ -71,7 +71,7 @@ def predictNewData(comment_list, save_path, completeName):
         
 def predictAdd(file_name):
 
-    save_path = r"C:\Users\atabe\GitRepos\cs48000-group7"
+    save_path = r"C:\Users\karah\Desktop\cs48000-group7"
 
     completeName = os.path.join(save_path, "all_sorted_comments.txt") 
 
@@ -91,7 +91,7 @@ def predictAdd(file_name):
 
 if __name__ == '__main__':
 
-    predictAdd("Unholy Adventure Mystery.txt")
+    predictAdd("Candy Crush Soda.txt")
    
 
 
